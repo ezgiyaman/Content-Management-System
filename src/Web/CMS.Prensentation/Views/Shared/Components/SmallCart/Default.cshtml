@@ -1,0 +1,15 @@
+﻿@model SmallCartVM
+@* bu kısımda görmek istedğimiz nesneler smallcartvm sınıfında bulunmaktadır. *@
+
+@if (Model != null)
+{
+    <p> Items in cart : <span class="badge badge-primary">@Model.NumberOfItems</span></p>
+    <p>Total: <b>@Model.TotalAmount.ToString("C2")</b></p>
+    <a class="btn btn-sm btn-primary mb-2" asp-controller="Cart" asp-action="Index">View Cart</a>
+    <br />
+    <a class="btn btn small btn-danger" asp-controller="Cart" asp-action="Clear">Clear Cart</a>
+}
+else
+{
+    <p class="lead m-1">Your cart is empty..!</p>
+}

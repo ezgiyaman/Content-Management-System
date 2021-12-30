@@ -1,0 +1,9 @@
+﻿@model List<GetPageVM>
+
+
+@foreach (var item in Model)
+{
+    <li class="nav item">
+        <a class="nav-link text-danger" asp-controller="Page" asp-action="Index" asp-route-slug="@item.Slug">@item.Title</a>
+    </li>
+}
